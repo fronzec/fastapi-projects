@@ -1,10 +1,10 @@
 from fastapi import FastAPI
 
-app = FastAPI()
+app = FastAPI() # FastAPI instance
 
 
-@app.get("/")
-async def root():
+@app.get("/") # path operation decorator
+async def root(): # path operation function
     return {"message": "Hello World"}
 
 
