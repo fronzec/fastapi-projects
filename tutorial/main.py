@@ -24,8 +24,15 @@ async def say_hello(name: str):
 
 
 @app.get("/items/{item_id}")
-async def read_item(item_id: int, q: Optional[str] = None):
-    return {"item_id": item_id}
+async def read_item(item_id: str, q: Optional[str] = None, short: bool = False):
+    item = {"item_id": item_id}
+    if q:
+        item.update({"q": q})
+    if not short:
+        item.update(
+            {"description": "This is an amazing item that has a long description"}
+        )
+    return item
 
 @app.get("/items/")
 async def read_item(skip: int=0, limit: int=10):

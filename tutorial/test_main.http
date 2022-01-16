@@ -15,7 +15,27 @@ Accept: text/html
 
 ###
 
-http://127.0.0.1:8000/redoc
+GET http://127.0.0.1:8000/redoc
 Accept: text/html
+
+###
+
+GET http://127.0.0.1:8000/items/foo?short=True
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/items/foo?short=true
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/items/foo?short=1
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/items/foo?short=yes
+Accept: application/json
 
 ###
