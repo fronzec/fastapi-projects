@@ -61,3 +61,15 @@ Content-Type: application/json
 }
 
 ###
+
+PUT http://127.0.0.1:8000/items/1
+Content-Type: application/json
+
+{
+    "name": "foo",
+    "description": "An optional description",
+    "price": 45.2,
+    "tax": 3.5
+}
+
+###
