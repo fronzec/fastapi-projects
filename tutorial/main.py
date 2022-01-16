@@ -1,5 +1,7 @@
+from typing import Optional
 from enum import Enum
 from fastapi import FastAPI
+
 
 class ModelName(str, Enum):
     alexnet = "alexnet"
@@ -22,7 +24,7 @@ async def say_hello(name: str):
 
 
 @app.get("/items/{item_id}")
-async def read_item(item_id: int):
+async def read_item(item_id: int, q: Optional[str] = None):
     return {"item_id": item_id}
 
 @app.get("/items/")
