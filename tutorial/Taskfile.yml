@@ -2,4 +2,4 @@ version : '3'
 tasks:
   run-devel:
     cmds:
-      - uvicorn main:app --reload(
+      - uvicorn main:app --reload

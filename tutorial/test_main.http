@@ -9,3 +9,13 @@ GET http://127.0.0.1:8000/hello/User
 Accept: application/json
 
 ###
+
+GET http://127.0.0.1:8000/docs
+Accept: text/html
+
+###
+
+http://127.0.0.1:8000/redoc
+Accept: text/html
+
+###
