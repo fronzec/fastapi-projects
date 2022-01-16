@@ -49,3 +49,15 @@ GET http://127.0.0.1:8000/products/foo?needy=needyvalue
 Accept: application/json
 
 ###
+
+POST http://127.0.0.1:8000/items/
+Content-Type: application/json
+
+{
+    "name": "foo",
+    "description": "An optional description",
+    "price": 45.2,
+    "tax": 3.5
+}
+
+###
