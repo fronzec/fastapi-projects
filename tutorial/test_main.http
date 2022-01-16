@@ -44,3 +44,8 @@ GET http://127.0.0.1:8000/users/1/items/foo?short=no&q=qqqq
 Accept: application/json
 
 ###
+
+GET http://127.0.0.1:8000/products/foo?needy=needyvalue
+Accept: application/json
+
+###
