@@ -51,7 +51,7 @@ async def read_item(skip: int = 0, limit: int = 10):
 
 
 @app.get("/itemsv3/")
-async def read_items(q: Optional[str] = Query(None, min_length=3, max_length=50)):
+async def read_items(q: Optional[str] = Query(None, min_length=3, max_length=50, regex="^fixedquery$")):
     results = {"items": [{"item_id": "Foo"}, {"item_id": "Bar"}]}
     if q:
         results.update({"q": q})
