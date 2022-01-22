@@ -51,7 +51,7 @@ async def read_item(skip: int = 0, limit: int = 10):
 
 
 @app.get("/items/list/")
-async def read_items(q: Optional[List[str]] = Query(None)):
+async def read_items(q: List[str] = Query(["foo", "bar"])):
     query_items = {"q": q}
     return query_items
 
