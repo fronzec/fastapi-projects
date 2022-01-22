@@ -57,7 +57,18 @@ async def read_items(q: List[str] = Query(["foo", "bar"])):
 
 
 @app.get("/itemsv3/")
-async def read_items(q: Optional[str] = Query(None, min_length=3, max_length=50, regex="^fixedquery$")):
+async def read_items(
+    q: Optional[str] = Query(
+        None,
+        alias="item-query",
+        title="Query string",
+        description="Query string for the items to search in the database that have a good match",
+        min_length=3,
+        max_length=50,
+        regex="^fixedquery$",
+        deprecated=True,
+    )
+):
     results = {"items": [{"item_id": "Foo"}, {"item_id": "Bar"}]}
     if q:
         results.update({"q": q})
