@@ -143,9 +143,10 @@ async def create_item2(item_id: int, item: Item, q: Optional[str] = None):
 
 @app.get("/items5/{item_id}")
 async def read_items(
-    *, item_id: int = Path(..., title="The ID of the item to get", gt=0, le=1000), q: str
+    *, item_id: int = Path(..., title="The ID of the item to get", gt=0, le=1000), q: str,
+    size: float = Query(..., gt=0, le=10.5)
 ):
-    results = {"item_id": item_id}
+    results = {"item_id": item_id, "size": size}
     if q:
         results.update({"q": q})
     return results
