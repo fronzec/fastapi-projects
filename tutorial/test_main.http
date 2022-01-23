@@ -101,4 +101,4 @@ Accept: application/json
 
 ###
 
-GET http://localhost:8000/items5/5?q=qweqwre
+GET http://localhost:8000/items5/1?q=qweqwre

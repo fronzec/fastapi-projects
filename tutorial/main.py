@@ -143,7 +143,7 @@ async def create_item2(item_id: int, item: Item, q: Optional[str] = None):
 
 @app.get("/items5/{item_id}")
 async def read_items(
-    *, item_id: int = Path(..., title="The ID of the item to get"), q: str
+    *, item_id: int = Path(..., title="The ID of the item to get", ge=1), q: str
 ):
     results = {"item_id": item_id}
     if q:
