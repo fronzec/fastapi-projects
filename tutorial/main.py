@@ -1,6 +1,6 @@
 from typing import Optional, List
 from enum import Enum
-from fastapi import FastAPI, Query
+from fastapi import FastAPI, Query, Path
 from pydantic import BaseModel
 
 
@@ -139,3 +139,14 @@ async def create_item2(item_id: int, item: Item, q: Optional[str] = None):
     if q:
         result.update({"q": q})
     return result
+
+
+@app.get("/items5/{item_id}")
+async def read_items(
+    item_id: int = Path(..., title="The ID of the item to get"),
+    q: Optional[str] = Query(None, alias="item-query"),
+):
+    results = {"item_id": item_id}
+    if q:
+        results.update({"q": q})
+    return results

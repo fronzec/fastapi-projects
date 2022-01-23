@@ -100,3 +100,5 @@ GET http://127.0.0.1:8000/items/list/
 Accept: application/json
 
 ###
+
+GET http://localhost:8000/items5/5
