@@ -130,5 +130,6 @@ Content-Type: application/json
     "user": {
         "username": "dave",
         "full_name": "Dave Grohl"
-    }
+    },
+  "importance": 5
 }
