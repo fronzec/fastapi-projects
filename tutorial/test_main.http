@@ -117,7 +117,7 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:8000/items/multibody/9999
+PUT http://localhost:8000/items/multibody/9999?q=qqqqq
 Content-Type: application/json
 
 {
