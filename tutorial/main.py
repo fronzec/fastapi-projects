@@ -133,6 +133,11 @@ async def update_item(item_id: int, item: Item):
     return {"item_id": item_id, **item.dict()}
 
 
+@app.put("/itemsoptional/{item_id}")
+async def update_item(item_id: int, item: Optional[Item] = None):
+    return {"item_id": item_id, **item.dict()}
+
+
 @app.put("/items2/{item_id}")
 async def create_item2(item_id: int, item: Item, q: Optional[str] = None):
     result = {"item_id": item_id, **item.dict()}

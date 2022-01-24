@@ -102,3 +102,15 @@ Accept: application/json
 ###
 
 GET http://localhost:8000/items5/1?q=qweqwre&size=10.5
+
+###
+
+PUT http://localhost:8000/itemsoptional/1234
+Content-Type: application/json
+
+{
+    "name": "foo",
+    "description": "An optional description",
+    "price": 45.2,
+    "tax": 3.5
+}
