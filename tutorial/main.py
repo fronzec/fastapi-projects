@@ -151,6 +151,13 @@ async def update_item(item_id: int, item: Item, user: User, importance: int = Bo
     return results
 
 
+@app.put("/items/embed/{item_id}")
+async def update_item(item_id: int, item: Item = Body(..., embed=True)):
+    results = {"item_id": item_id, "item": item}
+    return results
+
+
+
 @app.put("/items2/{item_id}")
 async def create_item2(item_id: int, item: Item, q: Optional[str] = None):
     result = {"item_id": item_id, **item.dict()}

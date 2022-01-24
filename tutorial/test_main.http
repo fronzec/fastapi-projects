@@ -133,3 +133,21 @@ Content-Type: application/json
     },
   "importance": 5
 }
+
+###
+
+PUT http://localhost:8000/items/embed/8888
+Content-Type: application/json
+
+{
+    "item": {
+        "name": "Foo",
+        "description": "The pretender",
+        "price": 42.0,
+        "tax": 3.2
+    },
+    "ignored": {
+        "username": "dave",
+        "full_name": "Dave Grohl"
+    }
+}
