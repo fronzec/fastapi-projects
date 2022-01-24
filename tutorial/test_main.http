@@ -114,3 +114,21 @@ Content-Type: application/json
     "price": 45.2,
     "tax": 3.5
 }
+
+###
+
+PUT http://localhost:8000/items/multibody/9999
+Content-Type: application/json
+
+{
+    "item": {
+        "name": "Foo",
+        "description": "The pretender",
+        "price": 42.0,
+        "tax": 3.2
+    },
+    "user": {
+        "username": "dave",
+        "full_name": "Dave Grohl"
+    }
+}

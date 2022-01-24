@@ -11,6 +11,11 @@ class Item(BaseModel):
     tax: Optional[float] = None
 
 
+class User(BaseModel):
+    username: str
+    full_name: Optional[str] = None
+
+
 class ModelName(str, Enum):
     alexnet = "alexnet"
     resnet = "resnet"
@@ -136,6 +141,12 @@ async def update_item(item_id: int, item: Item):
 @app.put("/itemsoptional/{item_id}")
 async def update_item(item_id: int, item: Optional[Item] = None):
     return {"item_id": item_id, **item.dict()}
+
+
+@app.put("/items/multibody/{item_id}")
+async def update_item(item_id: int, item: Item, user: User):
+    results = {"item_id": item_id, "item": item, "user": user}
+    return results
 
 
 @app.put("/items2/{item_id}")
