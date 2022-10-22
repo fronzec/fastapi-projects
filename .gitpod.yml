@@ -9,10 +9,7 @@ tasks:
     command: echo "done"
   - name: PDM
     before: |
-      pipx install mockintosh==0.13.17
-      pipx inject mockintosh markupsafe==2.0.1
       pipx install pdm==2.1.5
-      pipx install poetry==1.2.0
     command: echo "done"
   - name: Poetry
     before: |
