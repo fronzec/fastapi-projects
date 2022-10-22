@@ -5,9 +5,9 @@ tasks:
   - name: Dependencies && Database && Tools # See more examples for python in https://www.gitpod.io/docs/introduction/languages/python
     before: |
       python3 -m pip install --user pipx && python3 -m pipx ensurepath --force
-      pipx install mockintosh && pipx inject mockintosh markupsafe==2.0.1
+      pipx install mockintosh==0.13.17 && pipx inject mockintosh markupsafe==2.0.1
       pipx install pdm==2.1.5
-      pipx install poetry==1.2.0
+      pipx install poetry==1.2.0 # TODO how to reload in the same terminal
     init: |
       cd ./tutorial
     command: echo "done"
