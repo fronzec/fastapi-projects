@@ -1,0 +1,59 @@
+# https://www.gitpod.io/docs
+# https://www.gitpod.io/docs/references/gitpod-yml
+# Commands to start on workspace startup
+tasks:
+  - name: Mockintosh, PDM and Poetry
+    before: |
+      pipx install mockintosh==0.13.17
+      pipx inject mockintosh markupsafe==2.0.1
+      pipx install pdm==2.1.5
+      pipx install poetry==1.2.0
+  - name: Dependencies && Database # See more examples for python in https://www.gitpod.io/docs/introduction/languages/python
+    init: |
+      cd ./tutorial && cd ..
+
+image:
+  file: .gitpod.Dockerfile
+
+# exposed ports
+ports:
+  - port: 3000
+    name: App
+    onOpen: ignore
+    description: Web Port
+  - name: Database
+    description: PostgreSQL default port
+    port: 5432
+    onOpen: notify
+    visibility: private
+
+# Configure the VS Code editor.
+vscode:
+  extensions:
+    - ms-python.python # Python
+    - WakaTime.vscode-wakatime # WakaTime
+    - tamasfe.even-better-toml # Even Better TOML
+    - LittleFoxTeam.vscode-python-test-adapter # Python Test Explorer for Visual Studio Code
+
+# Define the integration between Gitpod and JetBrains IDEs.
+jetbrains:
+  pycharm:
+    vmoptions: "-Xms2048m -Xmx2048m -XX:ReservedCodeCacheSize=1024m -Didea.connection.timeout=3600000"
+    # Find a page of the required plugin.
+    # Select the Versions tab.
+    # Click any version to copy the pluginId (short name such as org.rust.lang) of the plugin you want to install.
+    plugins:
+      - org.toml.lang # Toml
+      - zielu.gittoolbox # GitToolBox
+      - izhangzhihao.rainbow.brackets # Rainbow Brackets
+      - lechuck.intellij-plugin.task # Taskfile
+      - cn.yiiguxing.plugin.translate # Translation
+      - com.intellij.grazie.pro # Grazie pro
+      - de.endrullis.idea.postfixtemplates # Custom Postfix Templates
+      - ru.adelf.idea.dotenv # .env files support
+      - String Manipulation # String Manipulation
+      - com.ultrahob.zerolength.plugin # Zero Width Characters locator
+      - com.andrey4623.rainbowcsv # Rainbow CSV
+      - com.wakatime.intellij.plugin # WakaTime
+    prebuilds:
+      version: stable
