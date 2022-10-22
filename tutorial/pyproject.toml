@@ -1,0 +1,20 @@
+[project]
+name = ""
+version = ""
+description = ""
+authors = [
+    {name = "Eduardo Flores", email = "efloresambrosio@gmail.com"},
+]
+dependencies = [
+    "fastapi[all]>=0.85.1",
+    "uvicorn[standard]>=0.18.3",
+]
+requires-python = ">=3.8"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-pep517>=1.0.0"]
+build-backend = "pdm.pep517.api"
+
+[tool]
+[tool.pdm]
