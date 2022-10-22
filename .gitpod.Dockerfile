@@ -6,8 +6,9 @@ USER gitpod
 # - Task https://taskfile.dev/
 # - Mockintosh https://mockintosh.io/
 # - pipx https://pypa.github.io/pipx/
+# ====== Go
 RUN bash -c "brew install go-task/tap/go-task"
+
+# ====== Python
 RUN bash -c "python3 -m pip install --user pipx && \
     python3 -m pipx ensurepath --force"
-# Some additional packages
-RUN pip3 install pytest==4.4.2 mock pytest-testdox toml

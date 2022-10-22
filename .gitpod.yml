@@ -2,12 +2,22 @@
 # https://www.gitpod.io/docs/references/gitpod-yml
 # Commands to start on workspace startup
 tasks:
-  - name: Mockintosh, PDM and Poetry
+  - name: Mockintosh
+    before: |
+      pipx install mockintosh
+      pipx inject mockintosh markupsafe==2.0.1
+    command: echo "done"
+  - name: PDM
     before: |
       pipx install mockintosh==0.13.17
       pipx inject mockintosh markupsafe==2.0.1
       pipx install pdm==2.1.5
       pipx install poetry==1.2.0
+    command: echo "done"
+  - name: Poetry
+    before: |
+      pipx install poetry==1.2.0
+    command: echo "done"
   - name: Dependencies && Database # See more examples for python in https://www.gitpod.io/docs/introduction/languages/python
     init: |
       cd ./tutorial && cd ..
