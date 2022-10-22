@@ -7,6 +7,4 @@ USER gitpod
 # - Mockintosh https://mockintosh.io/
 # - pipx https://pypa.github.io/pipx/
 
-RUN bash -c "brew install go-task/tap/go-task && \
-        python3 -m pip install --user pipx && \
-        python3 -m pipx ensurepath --force"
+RUN bash -c "brew install go-task/tap/go-task"
