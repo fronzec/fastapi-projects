@@ -1,5 +1,6 @@
 version : '3'
 tasks:
   run-devel:
+    desc: Runs the development server with Uvicorn through PDM
     cmds:
-      - uvicorn main:app --reload
+      - pdm run uvicorn main:app --reload
