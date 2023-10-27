@@ -1,0 +1,13 @@
+[project]
+name = "charts-backend"
+version = "0.1.0"
+description = "Backend service to create charts"
+authors = [
+    {name = "Eduardo Flores", email = "efloresambrosio@gmail.com"},
+]
+dependencies = []
+requires-python = ">=3.9"
+readme = "README.md"
+license = {text = "MIT"}
+
+
