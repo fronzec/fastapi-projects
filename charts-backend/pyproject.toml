@@ -5,7 +5,10 @@ description = "Backend service to create charts"
 authors = [
     {name = "Eduardo Flores", email = "efloresambrosio@gmail.com"},
 ]
-dependencies = []
+dependencies = [
+    "fastapi>=0.104.1",
+    "uvicorn[standard]>=0.23.2",
+]
 requires-python = ">=3.9"
 readme = "README.md"
 license = {text = "MIT"}
