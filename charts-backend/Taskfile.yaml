@@ -17,3 +17,9 @@ tasks:
     desc: Runs the development server with Uvicorn through PDM
     cmds:
       - pdm run uvicorn main:app --reload
+  pdm-create-venv:
+    desc: Creates a virtual environment for the project, requires python 3.12
+    cmd: pdm venv create 3.12
+  pdm-install: # See more details https://pdm.fming.dev
+    desc: Install all dependencies defined in the pyproject.toml file
+    cmd: pdm install
