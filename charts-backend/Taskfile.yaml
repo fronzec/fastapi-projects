@@ -1,0 +1,19 @@
+# Task reference usage https://taskfile.dev/usage/
+---
+version: '3'
+silent: true
+tasks:
+  hello:
+    cmds:
+      - echo "Task works ok!!!"
+  setup-envs:
+    cmds:
+      - cp example.env .env
+    # test existence of files
+    preconditions:
+      - sh: "! test -f .env"
+        msg: "==========> .env file already exists, their values will be used"
+  run-devel:
+    desc: Runs the development server with Uvicorn through PDM
+    cmds:
+      - pdm run uvicorn main:app --reload
